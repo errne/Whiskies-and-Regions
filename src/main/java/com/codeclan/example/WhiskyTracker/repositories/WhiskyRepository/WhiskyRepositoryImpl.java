@@ -28,18 +28,6 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         return results;
     }
 
-//    @Transactional
-//    public List<Whisky> findWhiskiesbyDistillerybyAge(Long distillery_id, int age){
-//        List<Whisky> results = null;
-//
-//        Session session = entityManager.unwrap(Session.class);
-//
-//        Criteria cr = session.createCriteria(Whisky.class);
-//        cr.createAlias("distilleries", "distilleryAlias");
-//        cr.add(Restrictions.eq("distilleryAlias", distillery_id));
-//        results = cr.list();
-//        return results;
-//    }
 
     @Transactional
     public List<Whisky> getWhiskiesByRegion(String region){
@@ -53,5 +41,7 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         results = cr.list();
         return results;
     }
+
+
 
 }
