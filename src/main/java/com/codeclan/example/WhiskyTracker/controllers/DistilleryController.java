@@ -23,10 +23,10 @@ public class DistilleryController {
         return distilleryRepository.findDistilleriesByRegion(region);
     }
 
-//    @GetMapping(value = "{id}/whiskies/aged/{age}")
-//    public List<Whisky> findDistilleryWithWhiskiesAged(@PathVariable Long id, @PathVariable Integer age){
-//        return distilleryRepository.findDistilleryWithWhiskiesAged(id, age);
-//    }
+    @GetMapping(value = "/whiskies/aged/{age}")
+    public List<Distillery> findAllDistilleriesWithWhiskiesAged(@PathVariable Integer age){
+        return distilleryRepository.findDistilleryByWhiskyAge(age);
+    }
 
 
 

@@ -28,17 +28,17 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
         return results;
     }
 
-//    @Transactional
-//    public List<Whisky> findDistilleryWithWhiskiesAged(Long id, Integer age){
-//        List<Whisky> results = null;
-//
-//        Session session = entityManager.unwrap(Session.class);
-//
-//        Criteria cr = session.createCriteria(Distillery.class);
-//        cr.createAlias("whiskies", "whiskyAlias");
-//        cr.add(Restrictions.eq("whiskyAlias.age", age));
-//        results = cr.list();
-//        return results;
-//    }
+    @Transactional
+    public List<Distillery> findDistilleryByWhiskyAge(Integer age){
+        List<Distillery> results = null;
+
+        Session session = entityManager.unwrap(Session.class);
+
+        Criteria cr = session.createCriteria(Distillery.class);
+        cr.createAlias("whiskies", "whiskyAlias");
+        cr.add(Restrictions.eq("whiskyAlias.age", age));
+        results = cr.list();
+        return results;
+    }
 
 }
